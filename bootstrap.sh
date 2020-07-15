@@ -13,18 +13,15 @@ echo 'Set English keyboard layout...'
 echo "------------------------"
 sudo sed -i 's/XKBLAYOUT="us"/g' /etc/default/keyboard
 
-echo 'Create Development directory...'
+echo 'Create new user for hadoop cluster...'
 echo "------------------------"
-mkdir /home/vagrant/Development
-mkdir /home/vagrant/Development/git
-sudo chmod 777 -R /home/vagrant/Development/
+sudo adduser --disabled-password --gecos "" admin
+su - admin
+mkdir /home/admin/hadoop
+sudo chmod 777 -R /home/admin/hadoop
 
-echo 'Install Git and create local repository directory'
+echo 'Download hadoop 3.2.1'
 echo "------------------------"
-sudo apt-get install git -y
-
-echo 'Install Git Flow...'
-echo "------------------------"
-wget -q – http://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh –no-check-certificate -P /tmp
-sudo chmod a+x /tmp/gitflow-installer.sh
-sudo sh /tmp/gitflow-installer.sh
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+tar -zxvf hadoop-3.2.1.tar.gz -C /home/admin/hadoop/
+rm /home/admin/hadoop/hadoop-3.2.1.tar.gz
