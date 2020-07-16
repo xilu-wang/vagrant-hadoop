@@ -6,6 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "generic/ubuntu1804"
   config.vm.network :public_network
+  config.vm.synced_folder "./data", "/synced_data"
   config.vm.provider :virtualbox do |vb|
     vb.gui = true
     vb.customize [
