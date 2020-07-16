@@ -34,6 +34,7 @@ echo $HADOOP_HOME
 
 echo 'Update Hadoop Configurations'
 echo "------------------------"
+sed -i 's/\r$//' /synced_data/hadoop-env.sh
 sudo cp -f /synced_data/hadoop-env.sh /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/hadoop-env.sh
 sudo cp -f /synced_data/core-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/core-site.xml
 sudo cp -f /synced_data/hdfs-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/hdfs-site.xml
