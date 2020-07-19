@@ -13,6 +13,20 @@ echo 'Set English keyboard layout...'
 echo "------------------------"
 sudo sed -i 's/XKBLAYOUT="us"/g' /etc/default/keyboard
 
+echo 'Install JDK 11 to /usr/lib/jvm/'
+echo "------------------------"
+sudo mkdir /usr/lib/jvm
+sudo wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
+sudo tar -zxvf openjdk-11.0.2_linux-x64_bin.tar.gz -C /usr/lib/jvm/
+sudo rm openjdk-11.0.2_linux-x64_bin.tar.gz
+export JAVA_HOME=/usr/lib/jvm/jdk-11.0.2
+export PATH=$JAVA_HOME/bin:$PATH
+sudo touch /etc/profile.d/jdk.sh
+sudo echo 'export JAVA_HOME=/usr/lib/jvm/jdk-11.0.2' >> /etc/profile.d/jdk.sh
+sudo echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /etc/profile.d/jdk.sh
+sudo echo 'export JAVA_HOME=/usr/lib/jvm/jdk-11.0.2' >> /home/admin/.bashrc
+sudo echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /home/admin/.bashrc 
+
 echo 'Create new user for hadoop cluster...'
 echo "------------------------"
 sudo useradd -m -s /bin/bash admin
@@ -41,6 +55,5 @@ sudo cp -f /synced_data/hdfs-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop
 sudo cp -f /synced_data/yarn-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/yarn-site.xml
 sudo cp -f /synced_data/mapred-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/mapred-site.xml
 sudo cp -f /synced_data/slaves /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/slaves
-
 
 ifconfig
