@@ -53,6 +53,7 @@ sudo cp -f /synced_data/hadoop-env.sh /home/admin/hadoop/hadoop-2.7.2/etc/hadoop
 sudo cp -f /synced_data/core-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/core-site.xml
 sudo cp -f /synced_data/hdfs-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/hdfs-site.xml
 sudo cp -f /synced_data/yarn-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/yarn-site.xml
+sudo cp -f /synced_data/capacity-scheduler.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/capacity-scheduler.xml
 sudo cp -f /synced_data/mapred-site.xml /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/mapred-site.xml
 sudo cp -f /synced_data/slaves /home/admin/hadoop/hadoop-2.7.2/etc/hadoop/slaves
 
