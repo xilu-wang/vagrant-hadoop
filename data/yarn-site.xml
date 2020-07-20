@@ -21,7 +21,7 @@
 		<name>yarn.resourcemanager.hostname</name>
 		<value>resourcemanager</value>
 	</property>
-	<!-- <property>
+	<property>
 		<name>yarn.nodemanager.resource.memory-mb</name>
 		<value>3072</value>
 	</property>
@@ -36,5 +36,5 @@
   <property>
       <name>yarn.nodemanager.vmem-check-enabled</name>
       <value>false</value>
-  </property> -->
+  </property>
 </configuration>

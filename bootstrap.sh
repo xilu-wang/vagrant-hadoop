@@ -38,6 +38,7 @@ echo 'Download hadoop 2.7.2'
 echo "------------------------"
 sudo wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
 sudo tar -zxvf hadoop-2.7.2.tar.gz -C /home/admin/hadoop/
+sudo chmod 777 -R /home/admin/hadoop/hadoop-2.7.2
 sudo rm hadoop-2.7.2.tar.gz
 
 echo 'Update Hadoop Enviroment'
